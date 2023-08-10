@@ -2,16 +2,42 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Car car=new Car();
+        Motorcycle motorcycle=new Motorcycle();
+        car.start();
+        motorcycle.start();
+        car.stop();
+        motorcycle.stop();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    }
+}
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+interface Vehicle{
+    void start();
+    void stop();
+
+}
+
+class Car implements Vehicle{
+    @Override
+    public void start() {
+        System.out.println("Car started");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+}
+
+class Motorcycle implements Vehicle{
+    @Override
+    public void start() {
+        System.out.println("Motorcycle started");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Motorcycle stopped");
     }
 }
